@@ -1,0 +1,231 @@
+.mar-t-1r {
+    margin-top: 1rem;
+}
+
+
+/** Color Section */
+.back-cg-70 {
+    background-color: rgba(70, 70, 70, 1);
+}
+
+.back-cg-50 {
+    background-color: rgba(50, 50, 50, 1);
+}
+
+.cw-0 {
+    color: rgba(255, 255, 255, 1);
+}
+
+/** Color Section */
+
+.align-i-c {
+    align-items: center;
+}
+
+.justy-cont-c {
+    justify-content: center;
+}
+
+.left-50 {
+    left: 50%
+}
+
+.com-0 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.lr-0 {
+    left: 0;
+    right: 0;
+}
+
+.pos-a {
+    position: absolute;
+}
+
+.pos-r {
+    position: relative;
+}
+
+.d-f {
+    display: flex;
+}
+
+.d-g {
+    display: grid;
+}
+
+.d-n {
+    display: none;
+}
+
+.fd-c {
+    flex-direction: column;
+}
+
+/**-------------------- GENERAL CSS --------------------*/
+/**-------------------- heightAndWidthLIGHT CSS --------------------*/
+/** Width Section */
+.w-10 {
+    width: 10%;
+}
+
+.w-11 {
+    width: 11%;
+}
+
+.w-12 {
+    width: 12%;
+}
+
+.w-16 {
+    width: 16%;
+}
+
+.w-17 {
+    width: 17%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-33 {
+    width: 33%;
+}
+
+.w-34 {
+    width: 34%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-45 {
+    width: 50%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-66 {
+    width: 66%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/** Width Section */
+
+/** Height Section */
+.h-10 {
+    height: 10%;
+}
+
+.h-20 {
+    height: 20%;
+}
+
+.h-33 {
+    height: 33%;
+}
+
+.h-34 {
+    height: 34%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.h-60 {
+    height: 60%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-a {
+    height: auto;
+}
+
+.h-mh-100 {
+    min-height: 100%;
+}
+.h-100-vh {
+    height: 100vh;
+}
+.h-60-vh {
+    height: 60vh;
+}
+.marg-a {
+    margin: auto;
+}
+
+/** Tablet */
+@media (max-width: 767px) {
+    .tw-80 {
+        width: 80%;
+    }
+}
+
+/** Mobile */
+@media (max-width: 500px) {
+    /** Width */
+    .mw-80 {
+        width: 80%;
+    }
+
+    .mw-90 {
+        width: 90%;
+    }
+
+    .mw-100 {
+        width: 100%;
+    }
+
+    /** Width */
+    /** Height */
+    .mh-80 {
+        height: 80%;
+    }
+
+    .mh-80-vh {
+        /*height: 80vh;*/
+    }
+
+    .mh-90 {
+        height: 90%;
+    }
+
+    .mh-100 {
+        height: 100%;
+    }
+}

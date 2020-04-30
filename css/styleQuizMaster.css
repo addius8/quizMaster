@@ -1,0 +1,153 @@
+#background-image {
+    background-image: url("/img/bg.jpg");
+
+    filter: blur(5px);
+    -webkit-filter: blur(8px);
+
+    height: 100vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    display: block;
+}
+
+.outer-container {
+
+}
+
+body {
+    margin: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Baloo Chettan 2', cursive;
+    color: #2c2e2f;
+}
+
+
+.main-screen {
+    margin-top: 10px;
+    display: table;
+    border: #009cde solid 2px;
+    /*width: 25%;*/
+    /*min-width: 32.5em;*/
+    /*max-width: 32.5em;*/
+    /*height: 60%;*/
+    background-color: white;
+    border-radius: 14px;
+    /*padding: 3em;*/
+    padding: 3em;
+    max-width: 401px;
+    max-height: 650px;
+    -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+form input, select {
+    width: 100%;
+    border: 1px solid #9da3a6;
+    padding: 0 15px;
+    border-radius: 5px;
+    background: 0 0;
+    color: #2c2e2f;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 15px;
+}
+
+
+.calculation-form {
+    margin-top: 20px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+.header-paypal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-section button {
+    border-radius: 7px;
+    line-height: 1.5;
+    background: #0070ba;
+    padding: 13px 30px 15px;
+    border: none;
+    color: white;
+    width: 100%;
+}
+
+.centerText {
+    text-align: center;
+    color: grey;
+}
+
+.result-section p :nth-child(1) {
+    color: grey;
+    float: left;
+}
+
+.result-section p :nth-child(2) {
+    float: right;
+}
+
+/**-------------------- GENERAL CSS --------------------*/
+
+.noUi-target {
+    width: 100%;
+}
+
+
+/** Mobile */
+@media (max-width: 500px) {
+    .centerText {
+        font-Size: 0.7rem;
+    }
+
+    .main-screen {
+        padding: 3vw;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form input, select {
+        height: 30px;
+    }
+
+    p, select {
+        font-Size: 1rem;
+        font-Weight: 200;
+    }
+}
