@@ -1,15 +1,15 @@
-var loginBtn;
-
-function poopulateBtnLogin() {
-    loginBtn.addEventListener("click", onClickBtnLogin);
-
-    document.querySelector('.calculation-form').addEventListener('submit', function (Event) {
-        Event.preventDefault();
+require(['package/quizMaster/login'], function (QuizLogin) {
+    new QuizLogin({
+        events: {
+            onSubmit: function () {
+                var argsStr = arguments[1]['msg'];
+                if (argsStr === 'leaveWithoutExit') {
+                    self.$closeWindow();
+                }
+            },
+            // onOpen: function () {
+            //     console.log('Hello outer');
+            // }
+        }
     });
-}
-
-function onClickBtnLogin() {
-    console.log('login initiated');
-}
-
-poopulateBtnLogin();
+});
