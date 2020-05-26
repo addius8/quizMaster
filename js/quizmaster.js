@@ -1,15 +1,10 @@
-require(['package/quizMaster/login'], function (QuizLogin) {
-    new QuizLogin({
+require(['package/quizMaster/quizmaster'], function (QuizMaster) {
+    new QuizMaster({
         events: {
             onSubmit: function () {
-                var argsStr = arguments[1]['msg'];
-                if (argsStr === 'leaveWithoutExit') {
-                    self.$closeWindow();
-                }
+                console.log('submitted from QuizMaster');
+
             },
-            // onOpen: function () {
-            //     console.log('Hello outer');
-            // }
         }
     });
 });

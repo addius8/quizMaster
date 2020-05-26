@@ -14,6 +14,7 @@ define('package/quizMaster/login/btn', [
             'onClickBtnLogin',
             'getUserInput',
             'getPwInput',
+            'closeLoginWindow',
             'handleLogin',
             'resetNotesBox',
         ],
@@ -43,7 +44,7 @@ define('package/quizMaster/login/btn', [
             this.loginBtn = this.mainPanel.querySelector('.login-btn');
             this.loginNotes = this.mainPanel.querySelector('p.login-notes');
 
-            document.querySelector('.calculation-form').addEventListener('submit', function (Event) {
+            document.querySelector('.input-form').addEventListener('submit', function (Event) {
                 Event.preventDefault();
             });
         },
@@ -71,6 +72,7 @@ define('package/quizMaster/login/btn', [
         },
 
         handleLogin: function () {
+            var self = this;
             this.resetNotesBox();
             var userName = this.getUserInput().value;
             /** clear Username from Cross-Site-Scripting & SQL and XSS injection */
@@ -89,21 +91,51 @@ define('package/quizMaster/login/btn', [
             /** go on Ajax */
 
             this.getHash().then(function (hash) {
-                console.log(hash);
+                // console.log(hash);
+
+                var pwHashed = generateMD5Hash(pw);
+                // console.log('pw Hashed: ' + pwHashed);
+                var unified = pwHashed + hash;
+                // console.log('unified: {0}'.format(unified));
+                var combined = generateMD5Hash(unified);
+                // console.log('combined Hash: ' + combined);
+
+                /** now send  */
+                var sending = {
+                    'key': hash,
+                    'hash': combined,
+                    'user': userName
+                };
+                self.login(sending).then(function (result) {
+                    // console.log(result);
+                    self.setNotesBoxText(result);
+                    // self.fireEvent('onSubmit');
+                    if (result == 'pass') {
+                        self.closeLoginWindow();
+                        self.fireEvent('loggedIn', [self]);
+                    }
+
+                    // console.log(self.inited);
+                })
             })
 
             // var
 
         },
 
-        getHash: function() {
-             return new Promise(function (resolve, reject) {
+        closeLoginWindow: function () {
+            this.mainPanel.querySelector('.login-form').setStyles({
+                display: "none"
+            });
+        },
+
+        login: function (sending) {
+            return new Promise(function (resolve, reject) {
                 request_v1({
-                    'url': '{0}?{1}'.format('/requestHash', encodeQueryData({
-                'params': JSON.stringify({
-                    'hashLength': 10
-                })
-            }).toString())
+                    'method': 'post',
+                    'url': '{0}?{1}'.format('/secure_login', encodeQueryData({
+                        'params': JSON.stringify(sending)
+                    }).toString())
                 }).then(function (result) {
                     resolve(result);
                     /** successCallback */
@@ -111,7 +143,23 @@ define('package/quizMaster/login/btn', [
                     /** failureCallback */
                 });
             });
+        },
 
+        getHash: function () {
+            return new Promise(function (resolve, reject) {
+                request_v1({
+                    'url': '{0}?{1}'.format('/requestHash', encodeQueryData({
+                        'params': JSON.stringify({
+                            'hashLength': 10
+                        })
+                    }).toString())
+                }).then(function (result) {
+                    resolve(result);
+                    /** successCallback */
+                }, function (result) {
+                    /** failureCallback */
+                });
+            });
         },
 
         populateLoginBtn: function () {

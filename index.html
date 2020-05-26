@@ -9,7 +9,7 @@
     <title>QuizMaster</title>
     <!-- -------------------- NAVBAR RESOURCES -------------------- -->
     <!-- Latest compiled and minified CSS -->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
     <!--[[[NavBarResources]]]-->
 
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
@@ -46,26 +46,44 @@
 
 <div class="outer-container w-100 lr-0 pos-r d-f align-i-c justy-cont-c marg-a">
     <div class="main-screen w-50 mw-80 mh-80-vh h-60-vh">
-        <div class="header-paypal">
-            <h1>QuizMaster</h1>
-            <span class="centerText">
+        <div class="login-form">
+            <div class="header-paypal">
+                <h1>QuizMaster</h1>
+                <span class="centerText">
                 Ein Schulprojekt mit Quiz Fragen
             </span>
-        </div>
-        <form class="calculation-form">
-            <div class="d-f align-i-c justy-cont-c">
-                <input class="user" type="text" placeholder="BenutzerName">
             </div>
+            <form class="input-form">
+                <div class="d-f align-i-c justy-cont-c">
+                    <input class="user" type="text" placeholder="BenutzerName">
+                </div>
 
-            <div class="d-f align-i-c justy-cont-c">
-                <input class="pw" type="text" placeholder="PassWort">
+                <div class="d-f align-i-c justy-cont-c">
+                    <input class="pw" type="password" placeholder="PassWort">
+                </div>
+                <p class="login-notes d-f align-i-c justy-cont-c"></p>
+
+                <div class="button-section">
+                    <button type="submit" class="login-btn" data-purpose="calculating">Einloggen</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="menu-section" style="display: none">
+            <div class="button-section">
+                <button type="submit" class="menu-btn " >Quiz Starten</button>
             </div>
-            <p class="login-notes d-f align-i-c justy-cont-c"></p>
 
             <div class="button-section">
-                <button type="submit" class="login-btn" data-purpose="calculating">Einloggen</button>
+                <button type="submit" class="menu-btn" >Fragen Bearbeiten</button>
             </div>
-        </form>
+
+            <div class="button-section">
+                <button type="submit" class="menu-btn" data-purpose="calculating">Ausloggen</button>
+            </div>
+
+        </div>
+
     </div>
 </div>
 </body>

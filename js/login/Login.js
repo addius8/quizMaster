@@ -10,10 +10,10 @@ define('package/quizMaster/login', [
 
         Binds: [
             '$onOpen',
+            'initLoginBtn',
         ],
 
-        options: {
-        },
+        options: {},
 
         /**
          * The init Function from the Class
@@ -33,9 +33,17 @@ define('package/quizMaster/login', [
             this.initLoginBtn();
         },
 
-        initLoginBtn : function () {
-            new LoginBtn
-        }
+        initLoginBtn: function () {
+            var self = this;
+            new LoginBtn({
+                events: {
+                    loggedIn: function () {
+                        console.log('loggedIn from LoginBtn');
+                        self.fireEvent('submit');
+                    },
+                }
+            });
+        },
 
     });
 });
