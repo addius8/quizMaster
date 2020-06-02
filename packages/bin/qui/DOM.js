@@ -276,6 +276,18 @@ define('qui/classes/DOM', function () {
             }
 
             return false;
+        },
+
+        hideElem: function (elem) {
+            elem.setStyles({
+                display: 'none'
+            });
+        },
+
+        showElem: function (elem) {
+            elem.setStyles({
+                display: 'block'
+            });
         }
     });
 });

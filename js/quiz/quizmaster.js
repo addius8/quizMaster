@@ -1,7 +1,8 @@
 define('package/quizMaster/quizmaster', [
     'qui/classes/DOM',
-    'package/quizMaster/login'
-], function (QuiDom, Login) {
+    'package/quizMaster/login',
+    'package/quizMaster/menu'
+], function (QuiDom, Login, Menu) {
     "use strict";
 
     return new Class({
@@ -56,8 +57,15 @@ define('package/quizMaster/quizmaster', [
         },
 
         openQuizMenu: function () {
-            this.menuPage.setStyles({
-                display: 'block'
+            var self = this;
+
+            new Menu({
+                events: {
+                    onSubmit: function () {
+                        console.log('submitted from Menu');
+
+                    },
+                }
             });
         }
 
