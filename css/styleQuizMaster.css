@@ -123,6 +123,21 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
 }
 
+
+.answer-container {
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 6px;
+}
+
+.form-answers-text{
+    margin-bottom: 0px;
+}
+
+.answer-checkbox {
+    margin-bottom: 40px;
+}
+
 /**-------------------- GENERAL CSS --------------------*/
 
 .noUi-target {
